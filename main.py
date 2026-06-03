@@ -57,8 +57,7 @@ async def on_message(message):
     if len(message.mentions) >= 5:
         await message.delete()
         await message.channel.send("スパム検知：削除しました。")
-    # コマンドを有効にするために必須！
-    await bot.parse_commands(message) # 旧 process_commands 相当
+    # コマンドを処理するために必須
     await bot.process_commands(message)
 
 # コマンド
