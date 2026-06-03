@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
-
-# 1. 自分の新しいトークンをここに貼り付けてください
-TOKEN = "MTUxMDk5MTIwMDc5NzIwMDM4NA.GlvJN1.NAV3KSlDezLyMuw8OPLXueqRFTo_CVHSGVG7Jk"
+import os
 
 intents = discord.Intents.default()
 intents.members = True
@@ -79,4 +77,5 @@ async def setup_verify(ctx):
 async def setup_roles(ctx):
     await ctx.send("【役職選択】自分に付与したい役職を選んでください:", view=RoleView())
 
-bot.run("MTUxMDk5MTIwMDc5NzIwMDM4NA.GlvJN1.NAV3KSlDezLyMuw8OPLXueqRFTo_CVHSGVG7Jk")
+# ★ここが一番重要です！
+bot.run(os.environ['TOKEN'])
